@@ -1,0 +1,68 @@
+{%extends 'base.html'%}
+{% load static %}
+{%block content%}
+<style>
+body{
+    background: #c31432;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+.header{
+    font-family:Helvitica Neue;
+    font-size:18pt;
+    color:#DC3545;
+}
+
+p{
+    font-family:Helvitica Neue;
+    font-size:15pt;
+    margin-left:3%;
+    text-align:center;
+}
+
+.card
+{
+    width:40%;
+    height:auto;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:2%;
+    border-radius:35px;
+    text-align:center;
+}
+
+
+.card-body{
+    width:auto;
+    display:inline-block;
+}
+
+
+    
+</style>
+<body>
+        <div class="card">
+            <div class="header">
+                Diagnosis Report
+            </div>
+            <div class="card-body">
+                {%for imgname in diseasename%}
+                <img src="{%static ''%}{{'img/'}}{{imgname}}{{'.png'}}" onerror="this.onerror=null; this.src='{%static 'img/hypertension.png'%}'" style="width:100px;height:100px;"></img>
+                {%endfor%}
+                {%for dn in diseasename%}
+                <h5 class="card-title">{{dn}}</h5>
+                {% endfor %}
+                {%for de in desc%}
+                <p>{{de}}</p>
+                {%endfor%}
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'DoctorRecommendation:doctorrecommend'%}"><button class="btn btn-danger">Get verified by Doctors</button></a>
+                {% endif %}
+            </div>
+        </div>
+
+
+        {% comment %} <span style="color:red;font-size:18pt;text-align:center;display:block;margin-top:4%;">{{c}}</span> {% endcomment %}
+</body>
+{% endblock %}

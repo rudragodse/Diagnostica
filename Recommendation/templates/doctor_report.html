@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{%block content%}
+<style>
+    body
+    {
+        background: #c31432;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+    .card{
+        width:35%;
+        height:auto;
+        text-align:center;
+        margin-left:auto;
+        margin-right:auto;
+        margin-top:10%;
+    }
+    .card-body{
+        display:inline-block;
+        width:auto;
+    }
+    .header{
+        font-weight:bold;
+    }
+    
+</style>
+<body>
+    <div class="card">
+        <div class="header">Patients Report</div>
+        <div class="card-body">
+            {%if request.user.is_authenticated%}
+            <label style="font-weight:bold;">Patient Name:</label><h6>{{request.user.get_full_name}}</h6><br>
+            {% endif %}
+            
+            
+            
+            {%for sname in databasedata%}
+            <label style="font-weight:bold;">Symptoms entered:</label><h6>{{sname.symtoms_entered}}</h6><br>
+            {%endfor%}
+            
+        
+            {%for dname in databasedata%}
+            <label style="font-weight:bold;">Diagnosis:</label><h6>{{dname.diagnosis}}</h6><br>
+            {%endfor%}
+        
+            <button class="btn" disabled style="margin-left:80%;">VERIFIED</button>
+        </div>
+    </div>
+    
+</body>
+{% endblock %}
+

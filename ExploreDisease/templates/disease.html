@@ -1,0 +1,601 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content%}
+<style>
+body{
+    background: #c31432;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+#slide{
+    margin-left:auto;
+    margin-right:auto;
+    width:100%;
+    height:auto;
+}    
+#pagename{
+    margin-top:2%;
+}
+span{
+    color:white;
+    font-size:18pt;
+    margin-left:5%;
+    font-weight:bold;
+    }
+    #row1,#row2,#row3,#row4,#row5,#row6,#row7,#row8,#row9,#row10{
+       margin-top:5%;
+       justify-content:center;
+          
+    }
+    .card{
+        width:18%;
+        height:350px;
+        background-color:#ffffff;
+        border-radius:35px;
+        margin-left:1.5%;
+        text-align:center;
+    }
+    .card-body{
+        display:inline-block;
+        width:auto;
+    }
+
+
+    .card #aidsimg,#hepatitisimg,#breathimg,#allergyimg,
+    #arthritisimg,#spondylosisimg,#cholestasisimg,#commoncoldimg,
+    #dengueimg,#diabetesimg,#pilesimg,#drugimg,
+    #fungusimg,#gastroimg,#gerdimg,#hepatitisAimg,
+    #hepatitisBimg,#hepatitisCimg,#hepatitisDimg,#hepatitisEimg,
+    #hypertensionimg,#Hyperthyroidismimg,#hypoglycemiaimg,#hypothyroidismimg,
+    #impetigoimg,#jaundiceimg,#migraineimg,#osteoarthritisimg,
+    #paralysisimg,#pepticimg,#pneumoniaimg,#psoriasisimg,
+    #tuberculosisimg,#typhoidimg,#urinaryimg,#vertigoimg{
+        width:110px;
+        height:110px;
+        margin-left:auto;
+        margin-right:auto;
+        display:block;
+        margin-top:4%;
+    }
+    #acneimg{
+        width:100px;
+        height:100px;
+        margin-left:auto;
+        margin-right:auto;
+        display:block;
+        margin-top:0%;
+    }
+    #varicoseimg{
+        width:120px;
+        height:120px;
+        margin-left:auto;
+        margin-right:auto;
+        display:block;
+        margin-top:4%;
+    }
+    #heartimg,#malariaimg{
+        width:95px;
+        height:95px;
+        margin-left:auto;
+        margin-right:auto;
+        display:block;
+        margin-top:4%;
+    }
+
+    @media (max-width:1200px){
+        #slide{
+            margin-top:5%;
+        } 
+    }
+    @media (max-width:380px){
+        .card{
+            width:60%;
+            margin-top:4%;
+            display:flex;
+            
+        }
+    }
+    @media (max-width:450px){
+        .card{
+            width:50%;
+            margin-top:4%;
+            display:inline;
+        }
+    }
+    
+    
+</style>
+<body>
+<div id="pagename">
+<span>EXPLORE DISEASES</span>
+</div>
+
+
+
+
+
+
+
+ <div class="carousel slide" id="slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active" style="margin-top:2%;">
+            <div class="row" id="row1">
+                <div class="card">
+                    <div class="card-body">
+                        <img id="acneimg" src="{%static 'img/acne.png'%}">
+                        <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Acne</h5>
+                        <article>
+                            <p class="card-text" style="text-align:center;">Acne is a skin
+                    condition that occurs
+                    when your hair follicles
+                    become plugged with oil
+                    and dead skin cells. 
+                            </p>
+                        </article>
+                        <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:5%;">READ MORE</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img id="aidsimg" src="{%static 'img/virus.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Aids</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">AIDS refers to acquired 
+                immunodeficiency syndrome.
+                With this condition, the 
+                immune system is weakened 
+                due to HIV.
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:5%;">READ MORE</a>
+                </div>
+
+                <div class="card">
+                    <img id="hepatitisimg" src="{%static 'img/hepatitis.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Alcoholic Hepatits</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">Alcoholic hepatitis is a diseased, inflammatory condition of the liver caused by heavy alcohol consumption over an extended period of time.
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:5%;">READ MORE</a>
+                </div>
+                <div class="card">
+                    <img id="breathimg" src="{%static 'img/breath.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Bronchial Asthma</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">Bronchial asthma is a medical condition which causes the airway path of the lungs to swell and narrow.
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:1%;">READ MORE</a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item" style="margin-top:2%;">
+            <div class="row" id="row2">
+                <div class="card">
+                    <img id="allergyimg" src="{%static 'img/flu.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Allergy</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">A condition in which the immune system reacts abnormally to a foreign substance.
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:5%;">READ MORE</a>
+                </div>
+                <div class="card">
+                    <img id="arthritisimg" src="{%static 'img/bone.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Arthritis</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">Arthritis is an inflammation of the joints.It can affect one joint or multiple causing pain and stiffness that can worsen with age.
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:5%;">READ MORE</a>
+                </div>
+                <div class="card">
+                    <img id="spondylosisimg" src="{%static 'img/spondylosis.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Cervical Spondylosis</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">Cervical spondylosis is a general term for age-related wear and tear affecting the spinal disks in your neck.
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:5%;">READ MORE</a>
+                </div>
+                <div class="card">
+                    <img id="cholestasisimg" src="{%static 'img/cholestasis.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Chronic Cholestasis</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">Any condition in which the flow of bile from the liver stops or slows.Cholestasis is reduced flow of bile and can be caused by a liver infection, gallstones and cancer.
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:2%;">READ MORE</a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item" style="margin-top:2%;">
+            <div class="row" id="row3">
+                <div class="card">
+                    <img id="commoncoldimg" src="{%static 'img/flu.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Common Cold</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">A common viral infection of the nose and throat. Symptoms include a runny nose, sneezing and congestion.
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:5%;">READ MORE</a>
+                </div>
+                <div class="card">
+                    <img id="dengueimg" src="{%static 'img/dengue.jpg'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Dengue</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">A mosquito-borne viral disease occurring in tropical and subtropical areas. Symptoms include high fever, headache, rash and muscle and joint pain.
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:2%;">READ MORE</a>
+                </div>
+                <div class="card">
+                    <img id="diabetesimg" src="{%static 'img/Diabetes.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Diabetes</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">Diabetes is a disease that occurs when your blood glucose, also called blood sugar, is too high.
+                        Symptoms are frequent urination, increased thirst, blurry vision etc. 
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:2%;">READ MORE</a>
+                </div>
+                <div class="card">
+                    <img id="pilesimg" src="{%static 'img/piles1.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Piles</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">Swollen and inflamed veins in the rectum and anus that cause discomfort and bleeding.Discomfort is a common symptom, especially during bowel movements. 
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:0.5%;">READ MORE</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-item" style="margin-top:2%;">
+            <div class="row" id="row4">
+                <div class="card">
+                    <img id="drugimg" src="{%static 'img/drug.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Drug reaction</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">An adverse drug reaction (ADR) is an injury caused by taking medication.
+                         Drug allergies are a type of reaction.Skin reactions, such as hives and rashes, are the most common type
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:1%;">READ MORE</a>
+                </div>
+                <div class="card">
+                    <img id="fungusimg" src="{%static 'img/fungus.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Fungal Infection</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">A fungus that invades the tissue can cause a disease that's confined to the skin, spreads into tissue, bones and organs or affects the whole body. 
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:2%;">READ MORE</a>
+                </div>
+                <div class="card">
+                    <img id="gastroimg" src="{%static 'img/gastroentritis.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Gastroentritis</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">An intestinal infection marked by diarrhoea, cramps, nausea, vomiting and fever.
+                        It is typically spread by contact with an infected person or through contaminated food or water. 
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:2%;">READ MORE</a>
+                </div>
+                <div class="card">
+                    <img id="gerdimg" src="{%static 'img/GERD.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">GERD</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">Gastroesophageal Reflux Disease (GERD) is a digestive disorder that occurs when acidic stomach juices, or food and fluids back up from the stomach into the esophagus. 
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:2%;">READ MORE</a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item" style="margin-top:2%;">
+            <div class="row" id="row5">
+                <div class="card">
+                    <img id="heartimg" src="{%static 'img/heart-attack.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Heart Attack</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">A heart attack is the death of a segment of heart muscle caused by a loss of blood supply.
+                         The blood is usually cut off when an artery supplying the heart muscle is blocked by a blood clot.
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:0.2%;">READ MORE</a>
+                </div>
+                <div class="card">
+                    <img id="hepatitisAimg" src="{%static 'img/virus.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Hepatitis A</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">A highly contagious liver infection caused by the hepatitis A virus.
+                         It spreads from contaminated food or water or contact with someone who is infected. 
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:2%;">READ MORE</a>
+                </div>
+                <div class="card">
+                    <img id="hepatitisBimg" src="{%static 'img/hepatitis-b.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Hepatitis B</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">A serious liver infection caused by the hepatitis B virus that's easily preventable by a vaccine.
+This disease is most commonly spread by exposure to infected bodily fluids.
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:2%;">READ MORE</a>
+                </div>
+                <div class="card">
+                    <img id="hepatitisCimg" src="{%static 'img/hepatitis-c.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Hepatitis C</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">An infection caused by a virus that attacks the liver and leads to inflammation.
+The virus is spread by contact with contaminated blood.
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:2%;">READ MORE</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-item" style="margin-top:2%;">
+            <div class="row" id="row6">
+                <div class="card">
+                    <img id="hepatitisDimg" src="{%static 'img/hepatitis-d.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Hepatitis D</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">A serious liver disease caused by infection with the hepatitis D virus.
+Hepatitis D only occurs amongst people who are infected with the Hepatitis B virus. 
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:0.2%;">READ MORE</a>
+                </div>
+                <div class="card">
+                    <img id="hepatitisEimg" src="{%static 'img/virus.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Hepatitis E</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">A liver disease caused by the hepatitis E virus.
+The virus is mainly transmitted through drinking water contaminated with faecal matter. 
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:2%;">READ MORE</a>
+                </div>
+                <div class="card">
+                    <img id="hypertensionimg" src="{%static 'img/hype.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Hypertension</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">
+                        Usually hypertension is defined as blood pressure above 140/90, and is considered severe if the pressure is above 180/120.
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:2%;">READ MORE</a>
+                </div>
+                <div class="card">
+                    <img id="Hyperthyroidismimg" src="{%static 'img/hyperthyroidism.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Hyperthyroidism</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">The overproduction of a hormone by thyroid gland.
+Hyperthyroidism is the production of too much thyroxine hormone. It can increase metabolism.
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:2%;">READ MORE</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-item" style="margin-top:2%;">
+            <div class="row" id="row7">
+                <div class="card">
+                    <img id="hypoglycemiaimg" src="{%static 'img/hypoglycemia.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Hypoglycemia</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">Hypoglycemia is a condition in which your blood sugar (glucose) level is lower than normal.
+                        Diabetes treatment and other conditions can cause hypoglycaemia. 
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:0.2%;">READ MORE</a>
+                </div>
+                <div class="card">
+                    <img id="hypothyroidismimg" src="{%static 'img/hypothyroidism.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Hypothyroidism</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">Hypothyroidism is a condition in which the thyroid gland is not able to produce enough thyroid hormone. 
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:2%;">READ MORE</a>
+                </div>
+                <div class="card">
+                    <img id="impetigoimg" src="{%static 'img/Impetigo.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Impetigo</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">
+                        A highly contagious skin infection that causes red sores on the face.
+Impetigo mainly affects infants and children.
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:2%;">READ MORE</a>
+                </div>
+                <div class="card">
+                    <img id="jaundiceimg" src="{%static 'img/Jaundice.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Jaundice</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">A yellow tint to the skin or eyes caused by an excess of bilirubin, a substance created when red blood cells break down.
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:2%;">READ MORE</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-item" style="margin-top:2%;">
+            <div class="row" id="row8">
+                <div class="card">
+                    <img id="malariaimg" src="{%static 'img/malaria.jpg'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Malaria</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">A disease caused by a plasmodium parasite, transmitted by the bite of infected mosquitoes.
+                        Symptoms are chills, fever and sweating, usually occurring a few weeks after being bitten. 
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:0.2%;">READ MORE</a>
+                </div>
+                <div class="card">
+                    <img id="migraineimg" src="{%static 'img/migraine.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Migraine</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">A headache of varying intensity, often accompanied by nausea and sensitivity to light and sound.
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:2%;">READ MORE</a>
+                </div>
+                <div class="card">
+                    <img id="osteoarthritisimg" src="{%static 'img/bone.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Osteoarthritis</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">
+                        A type of arthritis that occurs when flexible tissue at the ends of bones wears down.
+                        protective tissue at the ends of bones (cartilage) occurs gradually and worsens over time.
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:2%;">READ MORE</a>
+                </div>
+                <div class="card">
+                    <img id="paralysisimg" src="{%static 'img/paralysis.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Paralysis</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">Paralysis is the loss of muscle function in part of your body. It happens when something goes wrong with the way messages pass between your brain and muscles.
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:2%;">READ MORE</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-item" style="margin-top:2%;">
+            <div class="row" id="row9">
+                <div class="card">
+                    <img id="pepticimg" src="{%static 'img/peptic-ulcer.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Peptic Ulcer Disease</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">A sore that develops on the lining of the oesophagus, stomach or small intestine.
+Ulcers occur when stomach acid damages the lining of the digestive tract. 
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:0.2%;">READ MORE</a>
+                </div>
+                <div class="card">
+                    <img id="pneumoniaimg" src="{%static 'img/pneumonia.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Pneumonia</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">Infection that inflames air sacs in one or both lungs, which may fill with fluid.
+With pneumonia, the air sacs may fill with fluid or pus.
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:2%;">READ MORE</a>
+                </div>
+                <div class="card">
+                    <img id="psoriasisimg" src="{%static 'img/psoriasis.jpg'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Psoriasis</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">
+                        A condition in which skin cells build up and form scales and itchy, dry patches.
+Psoriasis is thought to be an immune system problem.
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:2%;">READ MORE</a>
+                </div>
+                <div class="card">
+                    <img id="tuberculosisimg" src="{%static 'img/tuberculosis.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Tuberculosis</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">A potentially serious infectious bacterial disease that mainly affects the lungs.
+The bacteria that cause TB are spread when an infected person coughs or sneezes.
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:2%;">READ MORE</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-item" style="margin-top:2%;">
+            <div class="row" id="row10">
+                <div class="card">
+                    <img id="typhoidimg" src="{%static 'img/typhoid.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Typhoid</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">Typhoid fever is an infection that spreads through contaminated food and water.
+Vaccines are recommended in areas where typhoid fever is common.. 
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:0.2%;">READ MORE</a>
+                </div>
+                <div class="card">
+                    <img id="urinaryimg" src="{%static 'img/bladder.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;text-align:center;margin-top:2%;font-size:18pt">Urinary Tract Infection</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">An infection in any part of the urinary system, the kidneys, bladder or urethra.
+                        These are more common in women.
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:2%;">READ MORE</a>
+                </div>
+                <div class="card">
+                    <img id="varicoseimg" src="{%static 'img/varicose-veins.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;margin-top:2%;font-size:18pt">Varicose Veins</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">
+                        Gnarled, enlarged veins, most commonly appearing in the legs and feet.
+Varicose veins are generally benign. The cause of this condition is not known.
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:2%;">READ MORE</a>
+                </div>
+                <div class="card">
+                    <img id="vertigoimg" src="{%static 'img/vertigo.png'%}">
+                    <h5 class="card-title" style="margin-left:auto;margin-right:auto;text-align:center;margin-top:2%;font-size:18pt">Paromysal Positional Vertigo</h5>
+                    <article>
+                        <p class="card-text" style="text-align:center;">Episodes of dizziness and a sensation of spinning with certain head movements
+                        ,triggered by certain changes in head position.
+                        </p>
+                    </article>
+                    <a class="btn btn-flat red-text mx-0 mb-0" style="color:red;margin-top:1%;">READ MORE</a>
+                </div>
+            </div>
+        </div>
+
+        
+
+    </div>
+    <a class="carousel-control-prev" href="#slide" role="button" style="align-items:flex-left;" data-slide="prev">
+        <span class="fa fa-chevron-left fa-lg" style="color:red;"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+
+    <a class="carousel-control-next"  href="#slide" role="button" style="align-items:flex-right;" data-slide="next">
+        <span class="fa fa-chevron-right fa-lg" style="color:red;"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+
+
+ 
+
+
+
+
+
+ {% comment %} 
+
+    <div class="row" style="margin-top:2%;margin-left:20%;">
+        <button class="btn btn-outline-danger" style="border-radius:35px">Tuberculosis</button>
+        <button class="btn btn-outline-danger" style="border-radius:35px;margin-left:2%;">Typhoid</button>
+        <button class="btn btn-outline-danger" style="border-radius:35px;margin-left:2%;">Urinary Tract Infection</button>
+        <button class="btn btn-outline-danger" style="border-radius:35px;margin-left:2%;">Varicose Veins</button>
+        <button class="btn btn-outline-danger" style="border-radius:35px;margin-left:2%;">Paromysal Positional Vertigo</button>
+    </div>
+</div>  {% endcomment %}
+</body>
+{% endblock %}

@@ -1,0 +1,620 @@
+{% extends 'base.html' %}
+{%block content%}
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<style>
+    body{
+    background: #c31432;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+    .btn-outline-danger{
+        border-radius:35px;
+        margin-left:1%;
+        border:2px solid red;
+        color:white;
+        background-color:#ffffff00;
+    }
+
+    .selectedclass{
+        border-radius:35px;
+        margin-left:1%;
+        border:2px solid red;
+        color:red;
+        background-color:white;
+    }
+    #row1{
+        margin-left:auto;
+        margin-right:auto;
+        text-align:center;
+    }
+    #row2{
+        margin-left:auto;
+        margin-right:auto;
+        text-align:center;
+    }
+    #row3{
+        margin-left:auto;
+        margin-right:auto;
+        text-align:center;
+    }
+    #row4{
+        margin-left:auto;
+        margin-right:auto;
+        text-align:center;
+    }
+    #row5{
+        margin-left:auto;
+        margin-right:auto;
+        text-align:center;
+    }
+    #row6{
+        margin-left:auto;
+        margin-right:auto;
+        text-align:center;
+    }
+    #row7{
+        margin-left:auto;
+        margin-right:auto;
+        text-align:center;
+    }
+    #row8{
+        margin-left:auto;
+        margin-right:auto;
+        text-align:center;
+    }
+    #row9{
+        margin-left:auto;
+        margin-right:auto;
+        text-align:center;
+    }
+    #row10{
+        margin-left:auto;
+        margin-right:auto;
+        margin-top:2%;
+        text-align:center;
+    }
+    #row11{
+        margin-left:auto;
+        margin-right:auto;
+        margin-top:2%;
+        text-align:center;
+    }
+
+    #respiratory{
+        color:white;
+        font-size:18pt;
+        margin-left:auto;
+        margin-right:auto;
+        font-weight:bold;
+        display:inline-block;
+        
+    }
+    #gastrological{
+        color:white;
+        font-size:18pt;
+        margin-left:auto;
+        margin-right:auto;
+        font-weight:bold;
+        display:inline-block;
+    }
+    #urological{
+        color:white;
+        font-size:18pt;
+        margin-left:auto;
+        margin-right:auto;
+        font-weight:bold;
+        display:inline-block;
+    }
+    #neurological{
+        color:white;
+        font-size:18pt;
+        margin-left:auto;
+        margin-right:auto;
+        font-weight:bold;
+        display:inline-block;
+    }
+    #dermatological{
+        color:white;
+        font-size:18pt;
+        margin-left:auto;
+        margin-right:auto;
+        font-weight:bold;
+        display:inline-block;
+    }
+    #cardiovascular{
+        margin-left:auto;
+        margin-right:auto;
+        color:white;
+        font-size:18pt;
+        font-weight:bold;
+        display:inline-block;
+    }
+    #orthopedic{
+        margin-left:auto;
+        margin-right:auto;
+        font-size:18pt;
+        color:white;
+        font-weight:bold;
+        display:inline-block;
+    }
+    #eye{
+        color:white;
+        font-size:18pt;
+        margin-left:auto;
+        margin-right:auto;
+        font-weight:bold;
+        display:inline-block;
+    }
+    #glandular{
+        margin-left:auto;
+        margin-right:auto;
+        font-size:18pt;
+        color:white;
+        font-weight:bold;
+        display:inline-block;
+    }
+    #hepatic{
+        margin-left:auto;
+        margin-right:auto;
+        font-size:18pt;
+        color:white;
+        font-weight:bold;
+        display:inline-block;
+    }
+    #gynaecological{
+        color:white;
+        font-size:18pt;
+        margin-left:auto;
+        margin-right:auto;
+        font-weight:bold;
+        display:inline-block;
+    }
+
+    #slide1{
+        text-align:center;
+        margin-top:2%;
+    }
+    .col{
+        text-align:center;
+    }
+    {% comment %} Respiratory Symptoms slide {% endcomment %}
+    #symrow1,#symrow2,#symrow3,#symrow4{
+        margin-left:auto;
+        margin-right:auto;
+        display:block;
+        margin-top:2%;
+    }
+    {% comment %} Gastrological Slide {% endcomment %}
+    #symrow5,#symrow6,#symrow7,#symrow8,#symrow9{
+        margin-left:auto;
+        margin-right:auto;
+        display:block;
+        margin-top:2%;
+    }
+    {% comment %} Urological Slide {% endcomment %}
+    #symrow10,#symrow11{
+        margin-left:auto;
+        margin-right:auto;
+        display:block;
+        margin-top:2%;
+    }
+    {% comment %} Neurological Slide {% endcomment %}
+    #symrow12,#symrow13,#symrow14,#symrow15,#symrow16{
+        margin-left:auto;
+        margin-right:auto;
+        display:block;
+        margin-top:2%;
+    }
+    {% comment %} Dermatological Slide {% endcomment %}
+    #symrow17,#symrow18,#symrow19,#symrow20,#symrow21{
+        margin-left:auto;
+        margin-right:auto;
+        display:block;
+        margin-top:2%;
+    }
+    {% comment %} Cardio Vascular Slide {% endcomment %}
+    #symrow22,#symrow23,#symrow24,#symrow25,#symrow26{
+        margin-left:auto;
+        margin-right:auto;
+        display:block;
+        margin-top:2%;
+    }
+    {% comment %} Orthopedic Slide {% endcomment %}
+    #symrow27,#symrow28,#symrow29,#symrow30{
+        margin-left:auto;
+        margin-right:auto;
+        display:block;
+        margin-top:2%;
+    }
+    {% comment %} Eye Slide {% endcomment %}
+    #symrow31,#symrow32{
+        margin-left:auto;
+        margin-right:auto;
+        display:block;
+        margin-top:2%;
+    }
+    {% comment %} Glandular hepatic slide {% endcomment %}
+    #symrow32,#symrow33,#symrow34{
+        margin-left:auto;
+        margin-right:auto;
+        display:block;
+        margin-top:2%;
+    }
+
+    @media (max-width:900px){
+        #slide{
+            margin-top:15%;
+        }
+    
+    }
+    
+    
+    
+</style>
+<body>
+<div style="margin-top:2%;">
+<span style="color:white;font-size:18pt;margin-left:5%;font-weight:bold;">SYMPTOM SEARCH</span>
+</div>
+{% comment %} btn.style.backgroundColor="#ffffff"; {% endcomment %}
+        {% comment %} btn.style.color="red"; {% endcomment %}
+        
+        
+        {% comment %} "#DC3545" {% endcomment %}
+<script type="text/javascript">
+
+    var symptomarray=[];
+    function sendbtnname(id){
+        var btn=document.getElementById(id);
+        var btnname = document.getElementById(id).innerHTML;
+        if (btn.classList.contains("selectedclass"))
+        {
+            btn.setAttribute('class','btn btn-outline-danger');
+            symptomarray.pop();
+            console.log('popped',symptomarray);
+        }
+        else{
+            btn.setAttribute("class","btn selectedclass");
+            symptomarray.push(btnname);
+            console.log(btnname);
+            console.log(symptomarray);
+        }
+        
+        
+           
+    }
+
+    function sendsymptoms()
+    {
+        console.log('Hello',symptomarray);
+        var newurl="{%url 'Predict:predict'%}?symptoms="+symptomarray;
+        document.location.href=newurl;
+        window.location=newurl;
+    }
+
+
+    
+
+    
+</script>
+
+
+
+
+<div class="carousel slide" style="width:auto;height:auto;" id="slide" data-ride="carousel">
+    <div class="carousel-inner text-center">
+        <div class="carousel-item active" id="slide1">
+            <div class="col">
+                <div class="row" id="row1">
+                    <span id="respiratory">RESPIRATORY SYMPTOMS</span>
+                </div>
+                <div class="row" id="symrow1">
+                    <button class="btn btn-outline-danger"  id="1" name="bloodinsputum" onclick="sendbtnname(this.id)" >Blood in Sputum</button>
+                    <button class="btn btn-outline-danger" id="2" onclick="sendbtnname(this.id)" >Breathlessness</button>
+                    <button class="btn btn-outline-danger" id="3" onclick="sendbtnname(this.id)" >Congestion</button>    
+                </div>
+                <div class="row" id="symrow2">
+                    <button class="btn btn-outline-danger" id="4" onclick="sendbtnname(this.id)" >Continuous Sneezing</button>
+                    <button class="btn btn-outline-danger" id="5" onclick="sendbtnname(this.id)" >Cough</button>
+                    <button class="btn btn-outline-danger" id="6" onclick="sendbtnname(this.id)" >Drying and tingling lips</button>
+                </div>
+                <div class="row" id="symrow3">
+                    <button class="btn btn-outline-danger" id="7" onclick="sendbtnname(this.id)">Mucoid Sputum</button>
+                    <button class="btn btn-outline-danger" id="8" onclick="sendbtnname(this.id)">Phlegm</button>
+                    <button class="btn btn-outline-danger" id="9" onclick="sendbtnname(this.id)">Runny nose</button>
+                </div>
+                <div class="row" id="symrow4">
+                    <button class="btn btn-outline-danger" id="10" onclick="sendbtnname(this.id)" >Rusty Sputum</button>
+                    <button class="btn btn-outline-danger" id="11" onclick="sendbtnname(this.id)" >Sinus Pressure</button>
+                    <button class="btn btn-outline-danger" id="12" onclick="sendbtnname(this.id)" >Throat Irritation</button>
+                </div>
+                
+                <div>
+                    <button class="btn btn-danger" onclick="sendsymptoms()" style="margin-top:5%;margin-left:auto;margin-right:auto;border-radius:35px;">Upload Symptoms</button>
+                </div>
+            </div>
+            
+
+        </div>
+        <div class="carousel-item" style="margin-left:0px;margin-top:2%;">
+            <div class="col">
+                <div class="row" id="row2">
+                    <span id="gastrological">GASTROLOGICAL SYMPTOMS</span>
+                </div>
+                <div class="row" id="symrow5">
+                    <button class="btn btn-outline-danger" id="13" onclick="sendbtnname(this.id)" >Abdominal Pain</button>
+                    <button class="btn btn-outline-danger" id="14" onclick="sendbtnname(this.id)" >Acidity</button>
+                    <button class="btn btn-outline-danger" id="15" onclick="sendbtnname(this.id)" >Belly Pain</button>
+                    <button class="btn btn-outline-danger" id="16" onclick="sendbtnname(this.id)" >Bloody Stool</button>   
+                </div>
+                <div class="row" id="symrow6">
+                    <button class="btn btn-outline-danger" id="17" onclick="sendbtnname(this.id)" >Constipation</button>
+                    <button class="btn btn-outline-danger" id="18" onclick="sendbtnname(this.id)" >Dehydration</button>
+                    <button class="btn btn-outline-danger" id="19" onclick="sendbtnname(this.id)" >Diarrhoea</button>
+                    <button class="btn btn-outline-danger" id="20" onclick="sendbtnname(this.id)" >Distention of Abdomen</button>
+                    <button class="btn btn-outline-danger" id="21" onclick="sendbtnname(this.id)" >Fluid Overload</button>    
+                </div>
+                <div class="row" id="symrow7">
+                    <button class="btn btn-outline-danger" id="22" onclick="sendbtnname(this.id)" >Indigestion</button>
+                    <button class="btn btn-outline-danger" id="23" onclick="sendbtnname(this.id)" >Internal Itching</button>
+                    <button class="btn btn-outline-danger" id="24" onclick="sendbtnname(this.id)" >Irritation in anus</button>
+                    <button class="btn btn-outline-danger" id="25" onclick="sendbtnname(this.id)" >Loss of appetite</button>    
+                </div>
+                <div class="row" id="symrow8">
+                    <button class="btn btn-outline-danger" id="26" onclick="sendbtnname(this.id)" >Nausea</button>
+                    <button class="btn btn-outline-danger" id="27" onclick="sendbtnname(this.id)" >Pain during bowel movements</button>
+                    <button class="btn btn-outline-danger" id="28" onclick="sendbtnname(this.id)" >Pain in anal region</button>
+                    <button class="btn btn-outline-danger" id="29" onclick="sendbtnname(this.id)" >Passage of gases</button>
+                    <button class="btn btn-outline-danger" id="30" onclick="sendbtnname(this.id)" >Stomach Bleeding</button>    
+                </div>
+                <div class="row" id="symrow9">
+                    <button class="btn btn-outline-danger" id="31" onclick="sendbtnname(this.id)" >Stomach Pain</button>
+                    <button class="btn btn-outline-danger" id="32" onclick="sendbtnname(this.id)" >Swelling of Stomach</button>
+                    <button class="btn btn-outline-danger" id="33" onclick="sendbtnname(this.id)" >Ulcers on tongue</button>
+                    <button class="btn btn-outline-danger" id="34" onclick="sendbtnname(this.id)" >Vomiting</button>    
+                </div>
+                <div>
+                    <button class="btn btn-danger" onclick="sendsymptoms()"  style="margin-top:5%;margin-left:auto;margin-right:auto;border-radius:35px;">Upload Symptoms</button>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item" style="margin-left:0px;margin-top:2%;">
+            <div class="col">
+                <div class="row" id="row3">
+                    <span id="urological">UROLOGICAL SYMPTOMS</span>
+                </div>
+                <div class="row" id="symrow10">
+                    <button class="btn btn-outline-danger" onclick="sendbtnname(this.id)" id="35" >Bladder Discomfort</button>
+                    <button class="btn btn-outline-danger" onclick="sendbtnname(this.id)" id="36" >Burning Micturation</button>
+                    <button class="btn btn-outline-danger" onclick="sendbtnname(this.id)" id="37" >Continuous feeling of urination</button>
+                    <button class="btn btn-outline-danger" onclick="sendbtnname(this.id)" id="38" >Dark urine</button>
+                </div>
+                <div class="row" id="symrow11">
+                    <button class="btn btn-outline-danger" id="39" onclick="sendbtnname(this.id)" >Foul smell of urine</button>
+                    <button class="btn btn-outline-danger" id="40" onclick="sendbtnname(this.id)" >Polyuria</button>
+                    <button class="btn btn-outline-danger" id="41" onclick="sendbtnname(this.id)" >Spotting Urination</button>
+                    <button class="btn btn-outline-danger" id="42" onclick="sendbtnname(this.id)" >Yellow urine</button>
+                </div>
+                <div>
+                    <button class="btn btn-danger" onclick="sendsymptoms()" style="margin-top:5%;margin-left:auto;margin-right:auto;border-radius:35px;">Upload Symptoms</button>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item" style="margin-left:0px;margin-top:2%;">
+            <div class="col">
+                <div class="row" id="row4">
+                    <span id="neurological">NEUROLOGICAL SYMPTOMS</span>
+                </div>
+                <div class="row" id="symrow12">
+                    <button class="btn btn-outline-danger" id="43" onclick="sendbtnname(this.id)" >Altered Sensorium</button>
+                    <button class="btn btn-outline-danger" id="44" onclick="sendbtnname(this.id)" >Anxiety</button>
+                    <button class="btn btn-outline-danger" id="45" onclick="sendbtnname(this.id)" >Chills</button>
+                    <button class="btn btn-outline-danger" id="46" onclick="sendbtnname(this.id)" >Coma</button>   
+                </div>
+                <div class="row" id="symrow13">
+                    <button class="btn btn-outline-danger" id="47" onclick="sendbtnname(this.id)" >Dizziness</button>
+                    <button class="btn btn-outline-danger" id="48" onclick="sendbtnname(this.id)" >Excessive Hunger</button>
+                    <button class="btn btn-outline-danger" id="49" onclick="sendbtnname(this.id)" >Headache</button>
+                    <button class="btn btn-outline-danger" id="50" onclick="sendbtnname(this.id)" >High Fever</button>
+                    <button class="btn btn-outline-danger" id="51" onclick="sendbtnname(this.id)" >Increased Appetite</button>    
+                </div>
+                <div class="row" id="symrow14">
+                    <button class="btn btn-outline-danger" id="52" onclick="sendbtnname(this.id)" >Irritability</button>
+                    <button class="btn btn-outline-danger" id="53" onclick="sendbtnname(this.id)" >Lack of concentration</button>
+                    <button class="btn btn-outline-danger" id="54" onclick="sendbtnname(this.id)" >Loss of balance</button>
+                    <button class="btn btn-outline-danger" id="55" onclick="sendbtnname(this.id)" >Loss of smell</button>    
+                </div>
+                <div class="row" id="symrow15">
+                    <button class="btn btn-outline-danger" id="56" onclick="sendbtnname(this.id)" >Malaise</button>
+                    <button class="btn btn-outline-danger" id="57" onclick="sendbtnname(this.id)" >Mild Fever</button>
+                    <button class="btn btn-outline-danger" id="58" onclick="sendbtnname(this.id)" >Mood Swings</button>
+                    <button class="btn btn-outline-danger" id="59" onclick="sendbtnname(this.id)" >Restlessness</button>
+                    <button class="btn btn-outline-danger" id="60" onclick="sendbtnname(this.id)" >Shivering</button>    
+                </div>
+                <div class="row" id="symrow16">
+                    <button class="btn btn-outline-danger" id="61" onclick="sendbtnname(this.id)" >Slurred Speech</button>
+                    <button class="btn btn-outline-danger" id="62" onclick="sendbtnname(this.id)" >Spinning movements</button>
+                    <button class="btn btn-outline-danger" id="63" onclick="sendbtnname(this.id)" >Unsteadiness</button>
+                    <button class="btn btn-outline-danger" id="64" onclick="sendbtnname(this.id)" >Visual Disturbances</button>    
+                </div>
+                <div>
+                    <button class="btn btn-danger" onclick="sendsymptoms()" style="margin-top:5%;margin-left:auto;margin-right:auto;border-radius:35px;">Upload Symptoms</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-item" style="margin-left:0px;margin-top:2%;">
+            <div class="col">
+                <div class="row" id="row5">
+                    <span id="dermatological">DERMATOLOGICAL SYMPTOMS</span>
+                </div>
+                <div class="row" id="symrow17">
+                    <button class="btn btn-outline-danger" id="65" onclick="sendbtnname(this.id)" >Blackheads</button>
+                    <button class="btn btn-outline-danger" id="66" onclick="sendbtnname(this.id)" >Blister</button>
+                    <button class="btn btn-outline-danger" id="67" onclick="sendbtnname(this.id)" >Brittle Nails</button>
+                    <button class="btn btn-outline-danger" id="68" onclick="sendbtnname(this.id)" >Dischromic Patches</button>   
+                </div>
+                <div class="row" id="symrow18">
+                    <button class="btn btn-outline-danger" id="69" onclick="sendbtnname(this.id)" >Inflammatory Nails</button>
+                    <button class="btn btn-outline-danger" id="70" onclick="sendbtnname(this.id)" >Itching</button>
+                    <button class="btn btn-outline-danger" id="71" onclick="sendbtnname(this.id)" >Nodal Skin Irruptions</button>
+                    <button class="btn btn-outline-danger" id="72" onclick="sendbtnname(this.id)" >Patches in throat</button>
+                    <button class="btn btn-outline-danger" id="73" onclick="sendbtnname(this.id)" >Puffy Eyes and Face</button>    
+                </div>
+                <div class="row" id="symrow19">
+                    <button class="btn btn-outline-danger" id="74" onclick="sendbtnname(this.id)" >Pus filled Pimples</button>
+                    <button class="btn btn-outline-danger" id="75" onclick="sendbtnname(this.id)" >Red Sore around Nose</button>
+                    <button class="btn btn-outline-danger" id="76" onclick="sendbtnname(this.id)" >Red Spots around body</button>
+                    <button class="btn btn-outline-danger" id="77" onclick="sendbtnname(this.id)" >Scurring</button>    
+                </div>
+                <div class="row" id="symrow20">
+                    <button class="btn btn-outline-danger" id="78" onclick="sendbtnname(this.id)" >Silver Like Dusting</button>
+                    <button class="btn btn-outline-danger" id="79" onclick="sendbtnname(this.id)" >Sking peeling</button>
+                    <button class="btn btn-outline-danger" id="80" onclick="sendbtnname(this.id)" >Skin rash</button>
+                    <button class="btn btn-outline-danger" id="81" onclick="sendbtnname(this.id)" >Small Dents in Nails</button>
+                    <button class="btn btn-outline-danger" id="82" onclick="sendbtnname(this.id)" >Sunken Eyes</button>    
+                </div>
+                <div class="row" id="symrow21" >
+                    <button class="btn btn-outline-danger" id="83" onclick="sendbtnname(this.id)" >Swelling of extremities</button>
+                    <button class="btn btn-outline-danger" id="84" onclick="sendbtnname(this.id)" >Toxic Look</button>
+                    <button class="btn btn-outline-danger" id="85" onclick="sendbtnname(this.id)" >Yellow Crust Ooze</button>
+                    <button class="btn btn-outline-danger" id="86" onclick="sendbtnname(this.id)" >Yellowish Skin</button>    
+                </div>
+                <div>
+                    <button class="btn btn-danger" onclick="sendsymptoms()" style="margin-top:5%;margin-left:auto;margin-right:auto;border-radius:35px;">Upload Symptoms</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-item" style="margin-left:0px;margin-top:2%;">
+            <div class="col">
+                <div class="row" id="row6">
+                    <span id="cardiovascular">CARDIO VASCULAR SYMPTOMS</span>
+                </div>
+                <div class="row" id="symrow22">
+                    <button class="btn btn-outline-danger" id="87" onclick="sendbtnname(this.id)" >Bruising</button>
+                    <button class="btn btn-outline-danger" id="88" onclick="sendbtnname(this.id)" >Chest Pain</button>
+                </div>
+                <div class="row" id="symrow23">
+                    <button class="btn btn-outline-danger" id="89" onclick="sendbtnname(this.id)" >Cold hands and feet</button>
+                    <button class="btn btn-outline-danger" id="90" onclick="sendbtnname(this.id)" >Fast Heart rate</button>
+                    <button class="btn btn-outline-danger" id="91" onclick="sendbtnname(this.id)" >Irregular Sugar levels</button>
+                </div>
+                <div class="row" id="symrow24">
+                    <button class="btn btn-outline-danger" id="92" onclick="sendbtnname(this.id)" >Obesity</button>
+                    <button class="btn btn-outline-danger" id="93" onclick="sendbtnname(this.id)" >Palpitation</button>
+                </div>
+                <div class="row" id="symrow25">
+                    <button class="btn btn-outline-danger" id="94" onclick="sendbtnname(this.id)" >Prominent veins on calf</button>
+                    <button class="btn btn-outline-danger" id="95" onclick="sendbtnname(this.id)" >Swelling of blood vessels</button>
+                    <button class="btn btn-outline-danger" id="96" onclick="sendbtnname(this.id)" >Weight Gain</button>
+                </div>
+                <div class="row" id="symrow26">
+                    <button class="btn btn-outline-danger" id="97" onclick="sendbtnname(this.id)" >Weight Loss</button>
+                </div>
+                <div>
+                    <button class="btn btn-danger" onclick="sendsymptoms()" style="margin-top:5%;margin-left:auto;margin-right:auto;border-radius:35px;">Upload Symptoms</button>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item" style="margin-left:0px;margin-top:2%;">
+            <div class="col">
+                <div class="row" id="row7">
+                    <span id="orthopedic">ORTHOPEDIC SYMPTOMS</span>
+                </div>
+                <div class="row" id="symrow27">
+                    <button class="btn btn-outline-danger" id="98" onclick="sendbtnname(this.id)" >Back Pain</button>
+                    <button class="btn btn-outline-danger" id="99" onclick="sendbtnname(this.id)" >Cramps</button>
+                    <button class="btn btn-outline-danger" id="100" onclick="sendbtnname(this.id)">Fatigue</button>
+                    <button class="btn btn-outline-danger" id="101" onclick="sendbtnname(this.id)">Hip Joint Pain</button>
+                </div>
+                <div class="row" id="symrow28">
+                    <button class="btn btn-outline-danger" id="102" onclick="sendbtnname(this.id)" >Joint Pain</button>
+                    <button class="btn btn-outline-danger" id="103" onclick="sendbtnname(this.id)" >Knee Pain</button>
+                    <button class="btn btn-outline-danger" id="104" onclick="sendbtnname(this.id)" >Lethargy</button>
+                    <button class="btn btn-outline-danger" id="105" onclick="sendbtnname(this.id)" >Movement Stiffness</button>
+                    <button class="btn btn-outline-danger" id="106" onclick="sendbtnname(this.id)" >Muscle Pain</button>
+                </div>
+                <div class="row" id="symrow29">
+                    <button class="btn btn-outline-danger" id="107" onclick="sendbtnname(this.id)" >Muscle Wasting</button>
+                    <button class="btn btn-outline-danger" id="108" onclick="sendbtnname(this.id)" >Muscle Weakness</button>
+                    <button class="btn btn-outline-danger" id="109" onclick="sendbtnname(this.id)" >Neck Pain</button>
+                    <button class="btn btn-outline-danger" id="110" onclick="sendbtnname(this.id)" >Painful Walking</button>
+                </div>
+                <div class="row" id="symrow30">
+                    <button class="btn btn-outline-danger" id="111" onclick="sendbtnname(this.id)" >Stiff Neck</button>
+                    <button class="btn btn-outline-danger" id="112" onclick="sendbtnname(this.id)" >Swelling of Joints</button>
+                    <button class="btn btn-outline-danger" id="113" onclick="sendbtnname(this.id)" >Weakness in Limbs</button>
+                    <button class="btn btn-outline-danger" id="114" onclick="sendbtnname(this.id)" >Weakness on one side of body</button>
+                </div>
+                <div>
+                    <button class="btn btn-danger" onclick="sendsymptoms()" style="margin-top:5%;margin-left:auto;margin-right:auto;border-radius:35px;">Upload Symptoms</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-item" style="margin-left:0px;margin-top:2%;">
+            <div class="col">
+                <div class="row" id="row8">
+                    <span id="eye">EYE SYMPTOMS</span>
+                </div>
+                <div class="row" id="symrow31">
+                    <button class="btn btn-outline-danger" id="115" onclick="sendbtnname(this.id)" >Redness of Eyes</button>
+                    <button class="btn btn-outline-danger" id="116" onclick="sendbtnname(this.id)" >Pain behind the eyes</button>
+                </div>
+                <div class="row" id="symrow32">
+                    <button class="btn btn-outline-danger" id="117" onclick="sendbtnname(this.id)" >Blurred and distorted vision</button>
+                    <button class="btn btn-outline-danger" id="118" onclick="sendbtnname(this.id)" >Watering from eyes</button>
+                    <button class="btn btn-outline-danger" id="119" onclick="sendbtnname(this.id)" >Yellowing of eyes</button>
+                </div>
+                <div>
+                    <button class="btn btn-danger" onclick="sendsymptoms()" style="margin-top:5%;margin-left:auto;margin-right:auto;border-radius:35px;">Upload Symptoms</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-item" id="last-item" style="margin-left:0px;margin-top:2%;">
+            <div class="col">
+                <div class="row" id="row9">
+                    <span id="glandular">GLANDULAR SYMPTOMS</span>
+                </div>
+                <div class="row" id="symrow32">
+                    <button class="btn btn-outline-danger" id="120" onclick="sendbtnname(this.id)" >Enlarged Thyroid</button>
+                    <button class="btn btn-outline-danger" id="121" onclick="sendbtnname(this.id)" >Sweating</button>                
+                    <button class="btn btn-outline-danger" id="122" onclick="sendbtnname(this.id)" >Swelled Lymph Nodes</button>                
+                </div>
+                <div class="row" id="row10">
+                    <span id="hepatic">HEPATIC SYMPTOMS</span>
+                </div>
+                <div class="row" id="symrow33">
+                    <button class="btn btn-outline-danger" id="123" onclick="sendbtnname(this.id)" >Acute Liver Failure</button>
+                </div>
+                <div class="row" id="row11">
+                    <span id="gynaecological">GYNAECOLOGICAL SYMPTOMS</span>
+                </div>
+                <div class="row" id="symrow34">
+                    <button class="btn btn-outline-danger" id="124" onclick="sendbtnname(this.id)" >Abnormal Mensturation</button>
+                </div>
+                <div>
+                    <button class="btn btn-danger" onclick="sendsymptoms()" style="margin-top:5%;margin-left:auto;margin-right:auto;border-radius:35px;">Upload Symptoms</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a class="carousel-control-prev" href="#slide" role="button" data-slide="prev">
+        <span class="fa fa-chevron-left fa-lg" style="color:red;"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+
+    <a class="carousel-control-next"  href="#slide" role="button" data-slide="next">
+        <span class="fa fa-chevron-right fa-lg" style="color:#240b36;"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+</body>
+{% endblock %}
